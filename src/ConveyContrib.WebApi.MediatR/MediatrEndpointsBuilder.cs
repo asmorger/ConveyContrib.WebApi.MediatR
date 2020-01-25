@@ -93,11 +93,11 @@ namespace ConveyContrib.WebApi.MediatR
             where TQuery : class, IRequest<TResult>;
     }
 
-    public class DispatcherEndpointsBuilder : IDispatcherEndpointsBuilder
+    public class MediatrEndpointsBuilder : IDispatcherEndpointsBuilder
     {
         private readonly IEndpointsBuilder _builder;
 
-        public DispatcherEndpointsBuilder(IEndpointsBuilder endpointsBuilder)
+        public MediatrEndpointsBuilder(IEndpointsBuilder endpointsBuilder)
         {
             _builder = endpointsBuilder;
         }
@@ -130,7 +130,7 @@ namespace ConveyContrib.WebApi.MediatR
             params string[] policies)
             where TQuery : class, IRequest<TResult>
         {
-            _builder.Post<TQuery>(path, (cmd, ctx) => BuildCommandContext(cmd, ctx, beforeDispatch, afterDispatch),
+            _builder.Get<TQuery>(path, (cmd, ctx) => BuildCommandContext(cmd, ctx, beforeDispatch, afterDispatch),
                 endpoint, auth, roles, policies);
             return this;
         }
@@ -251,6 +251,13 @@ namespace ConveyContrib.WebApi.MediatR
             if (afterDispatch is null)
             {
                 context.Response.StatusCode = 200;
+
+                if (result is null || typeof(TResult) == typeof(Unit))
+                {
+                    return;
+                }
+
+                await context.Response.WriteJsonAsync(result);
                 return;
             }
 
