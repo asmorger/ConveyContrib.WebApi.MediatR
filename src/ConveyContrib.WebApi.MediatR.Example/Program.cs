@@ -23,7 +23,9 @@ namespace ConveyContrib.WebApi.MediatR.Example
                 )
                 .Configure(app =>
                 {
-                    app.UseMediatREndpoints(endpoints => endpoints
+                    app
+                        .UseMediatRPublicContracts(false)
+                        .UseMediatREndpoints(endpoints => endpoints
                             .Get("", ctx => ctx.Response.WriteAsync("Hello"))
                             .Get<GetForecast, IEnumerable<WeatherForecast>>("WeatherForecast")
                         );

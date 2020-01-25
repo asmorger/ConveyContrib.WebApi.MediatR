@@ -28,30 +28,31 @@ namespace ConveyContrib.WebApi.MediatR
             return app;
         }
 
-        public static IDispatcherEndpointsBuilder MediatR(this IEndpointsBuilder endpoints,
-            Func<IDispatcherEndpointsBuilder, IDispatcherEndpointsBuilder> builder)
-        {
-            return builder(new MediatrEndpointsBuilder(endpoints));
-        }
-
-        public static IApplicationBuilder UsePublicContracts<T>(this IApplicationBuilder app,
+        public static IApplicationBuilder UseMediatRPublicContracts<T>(this IApplicationBuilder app,
             string endpoint = "/_contracts")
         {
             return app.UsePublicContracts(endpoint, typeof(T));
         }
 
-        public static IApplicationBuilder UsePublicContracts(this IApplicationBuilder app,
+        public static IApplicationBuilder UseMediatRPublicContracts(this IApplicationBuilder app,
             bool attributeRequired, string endpoint = "/_contracts")
         {
             return app.UsePublicContracts(endpoint, null, attributeRequired);
         }
 
-        public static IApplicationBuilder UsePublicContracts(this IApplicationBuilder app,
-            string endpoint = "/_contracts", Type? attributeType = null, bool? attributeRequired = true)
+        private static IApplicationBuilder UsePublicContracts(this IApplicationBuilder app,
+            string endpoint = "/_contracts", Type? attributeType = null, bool attributeRequired = true)
         {
-            return app.UseMiddleware<PublicContractsMiddleware>(string.IsNullOrWhiteSpace(endpoint) ? "/_contracts" :
-                endpoint.StartsWith("/") ? endpoint : $"/{endpoint}", attributeType ?? typeof(PublicContractAttribute),
-                attributeRequired);
+            if (string.IsNullOrWhiteSpace(endpoint))
+            {
+                endpoint = "/_contracts";
+            }
+
+            endpoint = endpoint.TrimStart('/');
+            
+            var targetAttributeType = attributeType ?? typeof(PublicContractAttribute);
+            
+            return app.UseMiddleware<PublicContractsMiddleware>($"/{endpoint}", targetAttributeType, attributeRequired);
         }
     }
 }
