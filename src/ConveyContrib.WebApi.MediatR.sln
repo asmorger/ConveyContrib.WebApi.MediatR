@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{E5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConveyContrib.WebApi.MediatR.Example", "ConveyContrib.WebApi.MediatR.Example\ConveyContrib.WebApi.MediatR.Example.csproj", "{C8C80F66-5357-4CC3-827F-4162F01E5777}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConveyContrib.WebApi.MediatR.Tests", "ConveyContrib.WebApi.MediatR.Tests\ConveyContrib.WebApi.MediatR.Tests.csproj", "{D3843888-921F-40E3-8742-15CB067EE6E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{C8C80F66-5357-4CC3-827F-4162F01E5777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8C80F66-5357-4CC3-827F-4162F01E5777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C80F66-5357-4CC3-827F-4162F01E5777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3843888-921F-40E3-8742-15CB067EE6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3843888-921F-40E3-8742-15CB067EE6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3843888-921F-40E3-8742-15CB067EE6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3843888-921F-40E3-8742-15CB067EE6E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C8C80F66-5357-4CC3-827F-4162F01E5777} = {E5D26014-E0BC-4198-8B31-5CCDE16A5896}
