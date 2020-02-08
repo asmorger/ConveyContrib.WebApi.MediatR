@@ -1,4 +1,3 @@
-using System;
 using Convey.WebApi;
 using FakeItEasy;
 using MediatR;
