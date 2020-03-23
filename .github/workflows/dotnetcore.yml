@@ -29,11 +29,11 @@ jobs:
       run: dotnet test ./src/ConveyContrib.WebApi.MediatR.sln --configuration Release
     - name: Package
       run: dotnet pack ./src/ConveyContrib.WebApi.MediatR/ConveyContrib.WebApi.MediatR.csproj --configuration Release -o dist --no-build -p:PackageVersion=1.0.$BUILD_NUMBER
-    - name: Publish
+    - name: Upload
       uses: actions/upload-artifact@master
       with:
         name: nupkg
-        path: dist
+        path: dist/ConveyContrib.WebApi.MediatR.1.0.$BUILD_NUMBER.nupkg
   deploy:
     needs: build
     name: deploy
@@ -44,4 +44,4 @@ jobs:
       with:
         name: nupkg
     - name: Publish
-      run: dotnet nuget push nupkg\*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org --skip-duplicate
+      run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org --skip-duplicate
