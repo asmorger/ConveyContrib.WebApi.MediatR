@@ -35,4 +35,4 @@ jobs:
         # Artifact name
         name: Nuget package
         # Directory containing files to upload
-        path: ./src/ConveyContrib.WebApi.MediatR/bin/Debug/netcoreapp3.1/publish/ConveyContrib.WebApi.MediatR.1.0.$BUILD_NUMBER.nupkg
+        path: ./src/ConveyContrib.WebApi.MediatR/bin/Debug/netcoreapp3.1/publish/*.nupkg
