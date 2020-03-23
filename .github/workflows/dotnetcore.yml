@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: nupkg
-        path: dist/ConveyContrib.WebApi.MediatR.1.0.$BUILD_NUMBER.nupkg
+        path: dist
   deploy:
     needs: build
     name: deploy
