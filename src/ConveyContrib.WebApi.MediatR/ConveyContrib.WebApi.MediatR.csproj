@@ -4,6 +4,7 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <Nullable>enable</Nullable>
         <Authors>Andrew Morger</Authors>
+        <Description>MediatR integration for Convey</Description>
         <PackageProjectUrl>https://github.com/asmorger/ConveyContrib.WebApi.MediatR</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/asmorger/ConveyContrib.WebApi.MediatR</RepositoryUrl>
