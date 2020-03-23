@@ -20,6 +20,6 @@ jobs:
     - name: Build
       run: dotnet build ./src/ConveyContrib.WebApi.MediatR.sln --configuration Release
     - name: Test
-      run: dotnet test ./src/ConveyContrib.WebApi.MediatR.Tests/ConveyContrib.WebApi.MediatR.Tests.csproj --no-restore --no-build 
+      run: dotnet test ./src/ConveyContrib.WebApi.MediatR.sln --no-restore --no-build 
     - name: Package
       run: dotnet pack ./src/ConveyContrib.WebApi.MediatR/ConveyContrib.WebApi.MediatR.csproj --configuration Release --no-restore --no-build
