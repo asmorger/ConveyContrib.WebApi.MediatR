@@ -24,8 +24,8 @@ jobs:
     - name: Print new build number
       run: echo "Build number is $BUILD_NUMBER"
     - name: Build
-      run: dotnet build ./src/ConveyContrib.WebApi.MediatR.sln --configuration Release -p:Version={$BUILD_NUMBER}
+      run: dotnet build ./src/ConveyContrib.WebApi.MediatR.sln --configuration Release -p:Version=1.0.$BUILD_NUMBER
     - name: Test
       run: dotnet test ./src/ConveyContrib.WebApi.MediatR.sln --configuration Release
     - name: Package
-      run: dotnet pack ./src/ConveyContrib.WebApi.MediatR/ConveyContrib.WebApi.MediatR.csproj --configuration Release --no-restore --no-build -p:PackageVersion={$BUILD_NUMBER}
+      run: dotnet pack ./src/ConveyContrib.WebApi.MediatR/ConveyContrib.WebApi.MediatR.csproj --configuration Release --no-restore --no-build -p:PackageVersion=1.0.$BUILD_NUMBER
