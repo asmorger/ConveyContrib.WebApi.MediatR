@@ -1,4 +1,7 @@
 # ConveyContrib.WebApi.MediatR
+
+![.NET Core](https://github.com/asmorger/ConveyContrib.WebApi.MediatR/workflows/.NET%20Core/badge.svg)
+
 MediatR integration for [Convey](https://convey-stack.github.io/).  Sample project [here](https://github.com/asmorger/ConveyContrib.WebApi.MediatR/tree/master/src/ConveyContrib.WebApi.MediatR.Example)
 
 ## Overview
