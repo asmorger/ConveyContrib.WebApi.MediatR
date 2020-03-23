@@ -3,6 +3,11 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <Nullable>enable</Nullable>
+        <Authors>Andrew Morger</Authors>
+        <PackageProjectUrl>https://github.com/asmorger/ConveyContrib.WebApi.MediatR</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/asmorger/ConveyContrib.WebApi.MediatR</RepositoryUrl>
+        <PackageTags>Convey, MediatR</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
