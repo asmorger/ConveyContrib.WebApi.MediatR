@@ -26,7 +26,7 @@ WebHost.CreateDefaultBuilder(args)
           .Build()
 ```
 
-To define custom endopints, the process is the same as `Convey's`, except for the method name used.  Subsitute 'UseEndpoints()' with `UseMediatREndpoints()`.  
+To define custom endopints, the process is the same as `Convey's`, except for the method name used.  Subsitute `UseEndpoints()` with `UseMediatREndpoints()`.  
 
 ```
 app
